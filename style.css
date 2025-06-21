@@ -1,0 +1,122 @@
+:root {
+  --bg: #0f0a09;
+  --panel: #2a1a14;
+  --line: #7d543f;
+  --text: #fff4ef;
+  --muted: #d8b6a5;
+  --accent: #ffb27d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 80% 8%, #69422d, #20150f 44%, #0d0907 100%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 400px) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.left,
+.right {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(42, 26, 20, 0.98), rgba(23, 15, 12, 0.95));
+}
+
+.left { padding: 1rem; }
+.right { padding: 0.85rem; display: grid; gap: 0.75rem; }
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 { margin: 0.45rem 0; font-size: clamp(1.5rem, 2vw, 2rem); }
+
+.desc {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 0.72rem;
+  background: rgba(23, 14, 11, 0.74);
+}
+
+.card h2 { margin: 0 0 0.5rem; font-size: 0.9rem; color: #ffe2d2; }
+
+label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0.35rem 0;
+  color: #f0d6ca;
+  font-size: 0.86rem;
+}
+
+input[type="range"] {
+  grid-column: 1 / span 2;
+  accent-color: var(--accent);
+}
+
+button {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #9e6a4f;
+  background: linear-gradient(130deg, #91573c, #7c4f3a);
+  color: #fff6f1;
+  padding: 0.52rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.metrics p { margin: 0.33rem 0; color: #f2d5c7; }
+
+canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #92664e;
+  background: #160f0c;
+}
+
+.list {
+  max-height: 220px;
+  overflow: auto;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.item {
+  border: 1px solid #8e6048;
+  border-left-width: 5px;
+  border-radius: 8px;
+  padding: 0.4rem;
+  background: rgba(48, 28, 21, 0.72);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1080px) {
+  .layout { grid-template-columns: 1fr; }
+}

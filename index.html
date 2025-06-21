@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fraud Pattern Investigator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="left">
+        <p class="eyebrow">Fraud Analytics</p>
+        <h1>Fraud Pattern Investigator</h1>
+        <p class="desc">Generate transaction networks, detect suspicious entities, and score risk based on behavior signatures.</p>
+
+        <div class="card">
+          <h2>Scenario</h2>
+          <label>Accounts
+            <input id="accountInput" type="range" min="20" max="120" step="2" value="56" />
+            <span id="accountValue">56</span>
+          </label>
+          <label>Transactions
+            <input id="txInput" type="range" min="60" max="1200" step="20" value="420" />
+            <span id="txValue">420</span>
+          </label>
+          <label>Risk Sensitivity
+            <input id="riskInput" type="range" min="0.6" max="2.5" step="0.1" value="1.4" />
+            <span id="riskValue">1.4</span>
+          </label>
+        </div>
+
+        <div class="card">
+          <h2>Actions</h2>
+          <div class="row">
+            <button id="generateBtn">Generate Graph</button>
+            <button id="analyzeBtn">Analyze Fraud</button>
+          </div>
+        </div>
+
+        <div class="card metrics">
+          <h2>Findings</h2>
+          <p>Flagged Accounts: <strong id="flaggedText">0</strong></p>
+          <p>High-Risk Rings: <strong id="ringsText">0</strong></p>
+          <p>Total Suspicious Volume: <strong id="volumeText">$0</strong></p>
+        </div>
+      </section>
+
+      <section class="right">
+        <article class="card">
+          <h2>Transaction Network</h2>
+          <canvas id="graph" width="980" height="420"></canvas>
+        </article>
+        <article class="card">
+          <h2>Top Suspicious Accounts</h2>
+          <div id="list" class="list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
